@@ -1,0 +1,27 @@
+﻿@model SimpleStock.Application.DTOs.ProductDto
+
+<h2>Ürünü Sil</h2>
+
+<div class="alert alert-danger">
+    Bu işlemi onaylıyor musunuz?
+</div>
+
+<dl class="row">
+    <dt class="col-sm-2">Ad</dt>
+    <dd class="col-sm-10">@Model.Name</dd>
+
+    <dt class="col-sm-2">Birim Fiyat</dt>
+    <dd class="col-sm-10">@Model.UnitPrice</dd>
+
+    <dt class="col-sm-2">Stok</dt>
+    <dd class="col-sm-10">@Model.StockQuantity</dd>
+
+    <dt class="col-sm-2">Kategori</dt>
+    <dd class="col-sm-10">@Model.CategoryId</dd>
+</dl>
+
+<form asp-action="Delete" asp-route-id="@Model.Id" method="post">
+    <button type="submit" class="btn btn-danger">Sil</button>
+    <a asp-action="Index" class="btn btn-secondary">İptal</a>
+</form>
+
